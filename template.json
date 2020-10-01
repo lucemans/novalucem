@@ -1,0 +1,11 @@
+{
+    "project_name": "<username>",
+    "metadata": {
+        "auto_scan": "true",
+        "enable_content_trust": "true",
+        "prevent_vul": "true",
+        "public": "false",
+        "reuse_sys_cve_allowlist": "true",
+        "severity": "low"
+    }
+}
