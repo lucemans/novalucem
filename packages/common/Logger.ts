@@ -6,7 +6,7 @@ export default class Logger {
         this.prefix = prefix;
     }
     dumb(str: string) {
-        this.raw(str, chalk.gray('DUMB'));
+        this.raw('\\033[31m' + str, chalk.gray('DUMB'));
     }
     success(str: string) {
         this.raw(str, chalk.greenBright('SUCCESS'));
@@ -15,7 +15,7 @@ export default class Logger {
         this.raw(str, chalk.yellowBright('WARN'));
     }
     info(str: string) {
-        this.raw(str, chalk.cyan('INFO'));
+        this.raw('\\033[31m' + str, chalk.cyan('INFO'));
     }
     error(str: string) {
         this.raw(str, chalk.red('ERROR'));

@@ -6,3 +6,5 @@ RUN set -eux \
     & apk add \
         --no-cache \
         yarn
+
+ENV FORCE_COLOR 1

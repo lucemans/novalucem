@@ -13,7 +13,7 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "build": "lerna exec yarn build --stream"
+    "build": "lerna run build --stream --since"
   },
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.0",
