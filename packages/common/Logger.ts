@@ -6,7 +6,7 @@ export default class Logger {
         this.prefix = prefix;
     }
     dumb(str: string) {
-        this.raw('\\033[31m' + str, chalk.gray('DUMB'));
+        this.raw(str, chalk.gray('DUMB'));
     }
     success(str: string) {
         this.raw(str, chalk.greenBright('SUCCESS'));
