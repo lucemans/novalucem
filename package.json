@@ -13,7 +13,9 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "build": "lerna run build --stream --since"
+    "build": "lerna run build --stream --since",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
   },
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.0",
