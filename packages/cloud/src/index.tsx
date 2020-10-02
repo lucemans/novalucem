@@ -7,21 +7,26 @@ import buildUrl from 'build-url';
 console.log('Version: ' + process.env.npm_package_version);
 
 ((a) => {
+    
+    // Handle ?= search headers
     if (location.search) {
         const res = queryString.parse(location.search);
         if (res['auth']) {
-            sessionStorage.setItem('token', res['auth'].toString());
+            localStorage.setItem('token', res['auth'].toString());
             location.href = (buildUrl(location.protocol + "//" + location.host + location.pathname));
         } else {
             console.error('Gotten unknown search');
         }
+        return;
     }
-    if (!sessionStorage.getItem('token')) {
+
+    // Handle Redirecting if the user isnt logged in
+    if (!localStorage.getItem('token')) {
         location.replace('https://auth.lvk.sh/login?callback=' + location.toString());
+        return;
     }
     
     // Render root
     var root = document.getElementById("root");
-    
     render(<App></App>, root);
 })();
