@@ -1,0 +1,10 @@
+{
+  "name": "@novalucem/backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "mkdir -p ~/.kube/ && echo $CLUSTER | base64 -d > ~/.kube/config && ts-node ./src/index.ts",
+    "build": "docker build -t r.lvk.sh/novalucem/backend ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/backend"
+  }
+}

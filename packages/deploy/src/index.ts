@@ -12,7 +12,8 @@ const hardcoded = {
     'novalucem/auth': 'nl-auth',
     'novalucem/deploy': 'nl-deploy',
     'novalucem/cloud': 'nl-cloud',
-    'novalucem/alpine': '-'
+    'novalucem/alpine': '-',
+    'novalucem/backend': 'nl-backend'
 };
 
 app.get('/', (req: Request, res: Response) => {
