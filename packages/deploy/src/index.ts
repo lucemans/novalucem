@@ -11,7 +11,8 @@ app.use(express.json())
 const hardcoded = {
     'novalucem/auth': 'nl-auth',
     'novalucem/deploy': 'nl-deploy',
-    'novalucem/cloud': 'nl-cloud'
+    'novalucem/cloud': 'nl-cloud',
+    'novalucem/alpine': '-'
 };
 
 app.get('/', (req: Request, res: Response) => {
@@ -107,8 +108,10 @@ app.post('/callback', async (req: Request, res: Response) => {
                 return;
             }
 
-            console.log('SYS UPGRADE');
-            await updateDeployment(ns, repo_id, repo_full_name, tag);
+            if (hardcoded[repo_full_name] != '-') { // Do not build Alpine Image!
+                console.log('SYS UPGRADE');
+                await updateDeployment(ns, repo_id, repo_full_name, tag);
+            }
         }
     }
 });
