@@ -19,7 +19,7 @@ jobs:
       run: echo ${{ secrets.DOCKER_LOGIN }} | docker login -u robot\$github --password-stdin r.lvk.sh
       
     - name: CHMOD
-      run: sh -c "sudo chmod -R 777 /github" 
+      run: sh -c "sudo chmod -R 777 $GITHUB_WORKSPACE" 
 
 #     - name: Install Docker
 #       run: apk add --no-cache ca-certificates curl openssl git openssh-client docker
