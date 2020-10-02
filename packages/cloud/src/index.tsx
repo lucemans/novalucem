@@ -5,7 +5,8 @@ import App from './App';
 import queryString from 'query-string';
 import buildUrl from 'build-url';
 
-console.log(location.search);
+console.log('Version: ' + process.env.npm_package_version);
+
 if (location.search) {
     const res = queryString.parse(location.search);
     if (res['auth']) {
