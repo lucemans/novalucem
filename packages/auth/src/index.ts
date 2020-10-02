@@ -4,11 +4,14 @@ import fetch, { Headers } from 'node-fetch';
 import JWT from 'jsonwebtoken';
 import { nanoid } from 'nanoid';
 import AuthPayload from '../../common/AuthPayload';
+import Logger from '../../common/Logger';
+import chalk from 'chalk';
 
 const app = express();
 const port = 8080;
 
 const returnURL: { [key: string]: string } = {};
+const authlog = new Logger(chalk.red('AUTH'));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('AUTH OK');
@@ -17,6 +20,7 @@ app.get('/', (req: Request, res: Response) => {
 app.get('/login', (req: Request, res: Response) => {
     if (req.query['callback']) {
         const funnyNum = nanoid();
+        authlog.info('/login ' + funnyNum);
         returnURL[funnyNum] = req.query['callback'].toString();
         res.redirect(buildUrl('https://github.com/login/oauth/authorize', {
             queryParams: {
