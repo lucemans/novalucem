@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "mkdir -p ~/.kube/ && echo $CLUSTER | base64 -d > ~/.kube/config && ts-node ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "build": "docker build -t r.lvk.sh/novalucem/backend ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/backend"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.8",
+    "express": "^4.17.1"
   }
 }
