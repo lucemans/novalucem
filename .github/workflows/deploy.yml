@@ -1,0 +1,28 @@
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    name: Build, push, and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout Master
+
+    - name: Login Docker
+      run: echo ${{ secrets.DOCKER_LOGIN }} | docker login -u robot$github --password-stdin r.lvk.sh
+      
+    - name: Install Node
+      uses: actions/setup-node@v1
+      
+    - name: Install Studd
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
+    - name: Build Image
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: build
