@@ -18,8 +18,8 @@ jobs:
     - name: Prepare Yarn
       uses: lucemans/actions-yarn@v2.0.0
 
-    - name: Install Docker
-      run: apk add --no-cache ca-certificates curl openssl git openssh-client docker
+#     - name: Install Docker
+#       run: apk add --no-cache ca-certificates curl openssl git openssh-client docker
 
     - name: Install Dependencies
       run: yarn install
