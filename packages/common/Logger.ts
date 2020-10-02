@@ -5,8 +5,14 @@ export default class Logger {
     constructor(prefix: string) {
         this.prefix = prefix;
     }
+    dumb(str: string) {
+        this.raw(str, chalk.gray('DUMB'));
+    }
     success(str: string) {
         this.raw(str, chalk.greenBright('SUCCESS'));
+    }
+    warn(str: string) {
+        this.raw(str, chalk.yellowBright('WARN'));
     }
     info(str: string) {
         this.raw(str, chalk.cyan('INFO'));

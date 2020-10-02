@@ -38,6 +38,7 @@ export function secure(req: Request, res: Response, next) {
     if (!!!req.headers.authorization) {
         res.status(403);
         res.send('No Authorization Header Present');
+        this.dumb('Auth Dismissed');
         return;
     }
 
