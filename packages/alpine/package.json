@@ -1,0 +1,9 @@
+{
+  "name": "@novalucem/alpine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "docker build -t r.lvk.sh/novalucem/alpine . && docker push r.lvk.sh/novalucem/alpine"
+  }
+}
