@@ -13,7 +13,7 @@ jobs:
       name: Checkout Master
 
     - name: Login Docker
-      run: echo ${{ secrets.DOCKER_LOGIN }} | docker login -u robot$github --password-stdin r.lvk.sh
+      run: echo ${{ secrets.DOCKER_LOGIN }} | docker login -u robot\$github --password-stdin r.lvk.sh
       
     - name: Install Node
       uses: actions/setup-node@v1
