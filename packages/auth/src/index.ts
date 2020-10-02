@@ -3,6 +3,7 @@ import buildUrl from 'build-url';
 import fetch, { Headers } from 'node-fetch';
 import JWT from 'jsonwebtoken';
 import { nanoid } from 'nanoid';
+import AuthPayload from '../../common/AuthPayload';
 
 const app = express();
 const port = 8080;
@@ -60,7 +61,7 @@ app.get('/github-callback', async (req: Request, res: Response) => {
         const res3 = await fetch('https://api.github.com/user', { headers: hd, method: 'GET' })
         const res4 = await res3.json();
 
-        const userPayload = {
+        const userPayload: AuthPayload = {
             id: res4['id'],
             name: res4['name'],
             profile: res4['avatar_url'],
