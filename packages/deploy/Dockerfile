@@ -13,13 +13,14 @@ WORKDIR /app
 COPY ./tsconfig.json .
 COPY ./package.json .
 
+COPY ./packages/common ./packages/common
+
 RUN yarn install --production
 
 COPY ./packages/deploy/package.json ./packages/deploy/package.json
 
 RUN cd /app/packages/deploy && yarn
 
-COPY ./packages/common ./packages/common
 COPY ./packages/deploy ./packages/deploy
 
 WORKDIR /app/packages/deploy
