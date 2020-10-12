@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/node_modules.*": true,
+    "packages/cloud/**/CHANGELOG": true,
+    "**/CHANGELOG": true,
+    "**/CHANGELOG.*": true,
+    "**/.Dockerignore": true,
+    "**/coverage": true,
+    "**/coverage.*": true
+  }
+}
