@@ -16,7 +16,7 @@ console.log('Version: ' + process.env.npm_package_version);
     // Handle Redirecting if the user isnt logged in
     let b = checkToken(localStorage.getItem('token'), 'https://auth.lvk.sh/login?callback=' + location.toString())
     b.length > 0 && [localStorage.clear(), location.replace(b)]
-    if (a.length > 0)
+    if (b.length > 0)
         return;
     
     // Render root
