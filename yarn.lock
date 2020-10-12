@@ -1865,6 +1865,13 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@lucemans/logger@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@lucemans/logger/-/logger-1.0.1.tgz#09fec5273ee452adcdf96bded83fd22e3a3a23d8"
+  integrity sha512-yeyxhvV+zLoz9IqXxJfNJyH/m26M2iVYzAs3onicuDhJE9c5hdh80+ai7RSWVQaPWx8AKejv0tBvTiOJjyqJXA==
+  dependencies:
+    chalk "^4.1.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

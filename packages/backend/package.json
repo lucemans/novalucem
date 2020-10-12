@@ -8,6 +8,8 @@
     "build": "docker build -t r.lvk.sh/novalucem/backend ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/backend"
   },
   "dependencies": {
+    "@lucemans/logger": "^1.0.1",
+    "@novalucem/common": "^1.0.0",
     "@types/express": "^4.17.8",
     "@types/redis": "^2.8.27",
     "express": "^4.17.1",

@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import express, { Request, Response, Router } from 'express';
-import Logger from '../../common/Logger';
+import {Logger} from '@lucemans/logger';
 
 export default class NetHandler extends Logger {
 

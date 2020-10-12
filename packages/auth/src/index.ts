@@ -3,9 +3,9 @@ import buildUrl from 'build-url';
 import fetch, { Headers } from 'node-fetch';
 import JWT from 'jsonwebtoken';
 import { nanoid } from 'nanoid';
-import AuthPayload from '../../common/AuthPayload';
-import Logger from '../../common/Logger';
+import {AuthPayload} from '@novalucem/common';
 import chalk from 'chalk';
+import { Logger } from '@lucemans/logger';
 
 const app = express();
 const port = 8080;

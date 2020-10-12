@@ -5,5 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "docker build -t r.lvk.sh/novalucem/alpine . && docker push r.lvk.sh/novalucem/alpine"
+  },
+  "dependencies": {
+    "@lucemans/logger": "^1.0.1",
+    "@novalucem/common": "^1.0.0"
   }
 }

@@ -1,6 +1,10 @@
 {
-  "name": "common",
+  "name": "@novalucem/common",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "@lucemans/logger": "^1.0.1"
+  }
 }

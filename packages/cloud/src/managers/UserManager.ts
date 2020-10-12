@@ -2,10 +2,6 @@ import queryString from 'query-string';
 import buildUrl from 'build-url';
 import JWT from 'jsonwebtoken';
 
-export function shouldRender(): boolean {
-    return true;
-}
-
 export function handleSearch(query: string, safe: string): string {
     const res = queryString.parse(query);
     if (res['auth']) {
@@ -16,13 +12,9 @@ export function handleSearch(query: string, safe: string): string {
 }
 
 export function checkToken(token: string, safe: string): string {
-    try {
-        if (!token)
-            return safe;
-        if (JWT.decode(token))
-            return '';
-    } catch (e) {
-        console.error(e);
+    if (!token)
         return safe;
-    }
+    if (JWT.decode(token))
+        return '';
+    return safe;
 }

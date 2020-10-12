@@ -5,9 +5,11 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "docker build -t r.lvk.sh/novalucem/cloud ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/cloud",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
+    "@lucemans/logger": "^1.0.1",
+    "@novalucem/common": "^1.0.0",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",
     "@types/react": "^16.9.50",
