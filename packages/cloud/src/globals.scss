@@ -1,6 +1,107 @@
+$primary: #f44b79;
+
 html, body {
     width: 100vw;
     height: 100vh;
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
+    font-weight: 200;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-direction: column;
+
+    .header {
+        background: white;
+        width: 100vw;
+        height: 64px;
+        border-bottom: 2px solid darken(#f5f5f5, 10%);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: 'Oswald', sans-serif;
+            .logo {
+                margin-left: 1rem;
+                color: $primary;
+            }
+            .sub {
+                color: black;
+                font-size: 2rem;
+            }
+        }
+        .right {
+            margin-right: 1rem;
+            .toggle {
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+
+    .horizontal {
+        display: flex;
+        justify-content: stretch;
+        align-items: stretch;
+        width: 100vw;
+        height: auto;
+        flex-grow: 2;
+
+        .sidebar {
+            background: white;
+            width: auto;
+            height: 100%;
+            position: relative;
+
+            > a {
+                color: black;
+                text-decoration: none;
+            }
+            .entry {
+                font-size: 1.2rem;
+                padding: 1rem 4rem 1rem 1rem;
+                cursor: pointer;
+                font-weight: 400;
+                border-bottom: 2px solid darken(#f5f5f5, 10%);
+                &:hover {
+                    background: darken(white, 10%);
+                }
+                &.active {
+                    background: $primary;
+                    color: white;
+                }
+            }
+
+            .bottom {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    
+        .content {
+            background: #f5f5f5;
+            flex-grow: 2;
+            padding: 1rem;
+        }
+    }
 }

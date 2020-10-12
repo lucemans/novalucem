@@ -1,5 +1,4 @@
 import queryString from 'query-string';
-import buildUrl from 'build-url';
 import JWT from 'jsonwebtoken';
 
 export function handleSearch(query: string, safe: string): string {

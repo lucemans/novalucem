@@ -1,0 +1,42 @@
+$primary: #f44b79;
+
+.app.dark {
+    background: #000;
+    color: white;
+
+    .header {
+        background: black;
+        border-bottom: 2px solid lighten(#000, 10%);
+
+        > .left {
+            .logo {
+            }
+            .sub {
+                color: white;
+            }
+        }
+    }
+
+    .horizontal {
+        .sidebar {
+            background: black;
+            > a {
+                color: white;
+            }
+            .entry {
+                border-color: transparent;
+                &:hover {
+                    background: lighten(black, 20%);
+                }
+                &.active {
+                    color: black;
+                    background: $primary;
+                }
+            }
+        }
+
+        .content {
+            background: lighten(black, 10%);
+        }
+    }
+}

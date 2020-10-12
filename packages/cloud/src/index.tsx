@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import App from './App';
-import JWT from 'jsonwebtoken';
 import { checkToken, handleSearch } from './managers/UserManager';
 
 console.log('Version: ' + process.env.npm_package_version);

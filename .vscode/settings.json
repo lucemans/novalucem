@@ -7,6 +7,11 @@
     "packages/cloud/**/CHANGELOG": true,
     "packages/cloud/**/CHANGELOG.*": true,
     "**/.Dockerignore": true,
-    "**/.Dockerignore.*": true
+    "**/.Dockerignore.*": true,
+    "packages/cloud/coverage": true,
+    "packages/cloud/dist": true,
+    "packages/cloud/.cache": true,
+    ".vscode": true,
+    ".github": true
   }
 }
