@@ -26,6 +26,7 @@ export default function Sidebar(props: any) {
 
     return (
         <div className="sidebar">
+            <div className="entry spacer"></div>
             <NavEntry url="/" exact={true} match="^/$">
                 Control Panel
             </NavEntry>

@@ -2,6 +2,8 @@ import * as React from 'react';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import "./dark.scss"
+import Machines from './components/Machines';
+import Applications from './components/Applications';
 
 export default function App(props: any) {
 
@@ -18,7 +20,7 @@ export default function App(props: any) {
                   <div className="sub">Cloud</div>
                </div>
                <div className="right">
-                  <div className="toggle" onClick={() => {setDark(!dark); localStorage.setItem('dark', !dark ? '1' : '0')}}>{dark && 'DARK' || 'LIGHT'}</div>
+                  <div className="toggle" onClick={() => { setDark(!dark); localStorage.setItem('dark', !dark ? '1' : '0') }}>{dark && 'DARK' || 'LIGHT'}</div>
                </div>
             </div>
             <div className="horizontal">
@@ -29,10 +31,13 @@ export default function App(props: any) {
                         Home Page
                      </Route>
                      <Route path="/apps">
-                        Applications
+                        <Applications></Applications>
+                     </Route>
+                     <Route path="/machines">
+                        <Machines></Machines>
                      </Route>
                      <Route>
-                        
+
                      </Route>
                   </Switch>
                </div>

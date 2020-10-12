@@ -85,6 +85,13 @@ html, body {
                     background: $primary;
                     color: white;
                 }
+                &.spacer {
+                    height: 3rem;
+                    &:hover {
+                        background: none;
+                        cursor: default;
+                    }
+                }
             }
 
             .bottom {
