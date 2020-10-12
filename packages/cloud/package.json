@@ -1,6 +1,6 @@
 {
   "name": "@novalucem/cloud",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
