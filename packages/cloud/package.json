@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "docker build -t r.lvk.sh/novalucem/cloud ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/cloud",
+    "build": "docker build -t r.lvk.sh/novalucem/cloud ../../ -f ./Dockerfile",
+    "push": "docker push r.lvk.sh/novalucem/cloud",
     "test": "jest --coverage"
   },
   "dependencies": {

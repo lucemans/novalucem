@@ -27,4 +27,4 @@ jobs:
     - name: Install Dependencies
       run: yarn install
     - name: Build Image
-      run: yarn build
+      run: yarn buildnpush

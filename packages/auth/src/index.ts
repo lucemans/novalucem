@@ -80,11 +80,13 @@ app.get('/github-callback', async (req: Request, res: Response) => {
                 }
             })
         );
+    } else if (req.query['error'] && req.query['state']) {
+        res.send('Welp, it appears you didnt want to be logged in. You can go back to <a href=\"'+returnURL[req.query['state'].toString()]+'\">' + returnURL[req.query['state'].toString()] + '</a>');
     } else {
         res.sendStatus(500);
     }
 });
 
 app.listen(port, () => {
-    console.log('ONLINE');
+    console.log('AUTH ONLINE');
 });

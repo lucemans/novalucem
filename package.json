@@ -14,6 +14,8 @@
   },
   "scripts": {
     "build": "lerna run build --stream --since",
+    "push": "lerna run build --stream --since",
+    "buildnpush": "yarn build && yarn push",
     "test": "lerna run test --stream --since",
     "new-version": "lerna version --conventional-commits --yes",
     "diff": "lerna diff"

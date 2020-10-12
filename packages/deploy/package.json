@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "mkdir -p ~/.kube/ && echo $CLUSTER | base64 -d > ~/.kube/config && ts-node ./src/index.ts",
-    "build": "docker build -t r.lvk.sh/novalucem/deploy:abcdefg ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/deploy:abcdefg"
+    "build": "docker build -t r.lvk.sh/novalucem/deploy:abcdefg ../../ -f ./Dockerfile",
+    "push": "docker push r.lvk.sh/novalucem/deploy:abcdefg"
   },
   "dependencies": {
     "@lucemans/logger": "^1.0.1",

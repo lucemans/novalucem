@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node ./src/index.ts",
-    "build": "docker build -t r.lvk.sh/novalucem/auth ../../ -f ./Dockerfile && docker push r.lvk.sh/novalucem/auth"
+    "build": "docker build -t r.lvk.sh/novalucem/auth ../../ -f ./Dockerfile",
+    "push": "docker push r.lvk.sh/novalucem/auth"
   },
   "dependencies": {
     "@lucemans/logger": "^1.0.1",
