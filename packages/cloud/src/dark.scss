@@ -6,18 +6,20 @@ $primary: #f44b79;
 
     .header {
         background: black;
-        border-bottom: 2px solid lighten(#000, 10%);
+        border-bottom: 2px solid lighten(#000, 15%);
 
         > .left {
             .logo {
-            }
-            .sub {
-                color: white;
+                .sub {
+                    color: white;
+                }
             }
         }
     }
 
     .horizontal {
+        background: lighten(black, 10%);
+        
         .sidebar {
             background: black;
             > a {
@@ -25,6 +27,13 @@ $primary: #f44b79;
             }
             .entry {
                 border-color: transparent;
+                color: white;
+                .txt {
+                    color: white;
+                }
+                .icon svg {
+                    filter: invert(1)
+                }
                 &:hover {
                     background: lighten(black, 20%);
                 }
@@ -36,7 +45,11 @@ $primary: #f44b79;
         }
 
         .content {
-            background: lighten(black, 10%);
+            .list {
+                .entry {
+                    background: black;
+                }
+            }
         }
     }
 }

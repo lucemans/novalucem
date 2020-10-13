@@ -1,6 +1,7 @@
 $primary: #f44b79;
 
-html, body {
+html,
+body {
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -31,18 +32,22 @@ html, body {
         justify-content: space-between;
         align-items: center;
 
+        z-index: 2;
+        flex-shrink: 0;
+
         .left {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            font-family: 'Oswald', sans-serif;
+            font-family: "Oswald", sans-serif;
             .logo {
                 margin-left: 1rem;
                 color: $primary;
-            }
-            .sub {
-                color: black;
                 font-size: 2rem;
+                .sub {
+                    color: black;
+                    font-size: 2rem;
+                }
             }
         }
         .right {
@@ -60,13 +65,44 @@ html, body {
         align-items: stretch;
         width: 100vw;
         height: auto;
+        overflow-y: hidden;
         flex-grow: 2;
+        position: relative;
+        background: #f5f5f5;
 
         .sidebar {
             background: white;
-            width: auto;
             height: 100%;
             position: relative;
+            left: 0;
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.07);
+            // min-width: 225px;
+            transition: 0.5s;
+            width: 4rem;
+            border-right: 2px solid darken(white, 20%);
+            overflow: hidden;
+            .entry {
+                .txt {
+                    transition: 0.3s;
+                    word-wrap: none;
+                    white-space: nowrap;
+                    padding-right: 4rem;
+                }
+            }
+
+            &:hover {
+                // width: 180px;
+                width: 260px;
+                .entry {
+                    .txt {
+                        margin-left: 0.75rem;
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+
+
 
             > a {
                 color: black;
@@ -74,19 +110,42 @@ html, body {
             }
             .entry {
                 font-size: 1.2rem;
-                padding: 1rem 4rem 1rem 1rem;
+                padding: 1rem 0.5rem 1rem 1rem;
                 cursor: pointer;
                 font-weight: 400;
                 border-bottom: 2px solid darken(#f5f5f5, 10%);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .icon {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    svg {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        object-fit: contain;
+                        // filter: invert(1)
+                    }
+                }
+                .txt {
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
+                    opacity: 0;
+                }
                 &:hover {
                     background: darken(white, 10%);
                 }
                 &.active {
                     background: $primary;
                     color: white;
+                    .icon {
+                        svg {
+                            filter: invert(1);
+                        }
+                    }
                 }
                 &.spacer {
-                    height: 3rem;
+                    height: 2rem;
                     &:hover {
                         background: none;
                         cursor: default;
@@ -96,7 +155,7 @@ html, body {
 
             .bottom {
                 position: absolute;
-                bottom: 0;
+                bottom: 5px;
                 left: 0;
                 right: 0;
                 display: flex;
@@ -104,11 +163,105 @@ html, body {
                 align-items: center;
             }
         }
-    
-        .content {
-            background: #f5f5f5;
+
+        .content_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
             flex-grow: 2;
-            padding: 1rem;
+            overflow-y: auto;
+
+            .content {
+                flex-grow: 2;
+                padding: 1rem;
+                width: 80%;
+                max-width: 80%;
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+
+                .back {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-size: 1rem;
+                    height: 2rem;
+                    // line-height: 1rem;
+                    min-width: 1px;
+                }
+
+                .title {
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    font-family: "Oswald", sans-serif;
+                }
+
+                .list {
+                    // display: flex;
+                    // justify-content: center;
+                    // align-items: stretch;
+                    flex-direction: row;
+                    width: 100%;
+                    height: auto;
+                    margin: 1rem 0;
+                    flex-direction: column;
+                    table-layout: auto;
+
+                    .entry {
+                        background: white;
+                        border-radius: 0.2rem;
+                        height: auto;
+                        min-height: 5rem;
+                        flex-grow: 2;
+                        // width: 100%;
+                        // min-height: 4rem;
+                        margin-top: 1rem;
+
+                        display: flex;
+                        justify-content: stretch;
+                        align-items: stretch;
+
+                        padding: 1.5rem 1.5rem;
+
+                        border-bottom: 2px solid darken(#f5f5f5, 10%);
+
+                        &:hover {
+                            background: $primary;
+                            cursor: pointer;
+                            color: white;
+                            border-bottom: 2px solid darken($primary, 10%);
+                        }
+
+                        .item {
+                            width: fit-content;
+
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                            flex-grow: 1;
+
+                            &.alive {
+                                flex-grow: 0;
+                            }
+                            &.name {
+                                padding-left: 1rem;
+                            }
+                            &.big {
+                                flex-grow: 8;
+                            }
+                        }
+
+                        &::first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }

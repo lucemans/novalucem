@@ -1,0 +1,19 @@
+.machines {
+    .status {
+        // justify-content: flex-end !important;
+        // flex-grow: 0 !important;
+        &.alive {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            .dot {
+                background: #3db611;
+                width: 0.75rem;
+                height: 0.75rem;
+                border-radius: 1rem;
+                padding: 0;
+            }
+        }
+    }
+}

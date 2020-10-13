@@ -2,8 +2,10 @@ import * as React from 'react';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import "./dark.scss"
-import Machines from './components/Machines';
-import Applications from './components/Applications';
+import Machines from './pages/Machines';
+import Applications from './pages/Applications';
+import LRoute from './components/LRoute';
+import Machine from './pages/Machine';
 
 export default function App(props: any) {
 
@@ -15,9 +17,8 @@ export default function App(props: any) {
             <div className="header">
                <div className="left">
                   <div className="logo">
-                     <h1>VK</h1>
+                     VK<span className="sub">Cloud</span>
                   </div>
-                  <div className="sub">Cloud</div>
                </div>
                <div className="right">
                   <div className="toggle" onClick={() => { setDark(!dark); localStorage.setItem('dark', !dark ? '1' : '0') }}>{dark && 'DARK' || 'LIGHT'}</div>
@@ -25,21 +26,24 @@ export default function App(props: any) {
             </div>
             <div className="horizontal">
                <Sidebar></Sidebar>
-               <div className="content">
-                  <Switch>
-                     <Route exact path="/">
-                        Home Page
+               <div className="content_wrap">
+                  <div className="content">
+                     <Switch>
+                        <LRoute exact={true} path="/" title="Control Panel">
+                           Control Panel
+                     </LRoute>
+                        <LRoute exact={true} path="/apps" title="Applications">
+                           <Applications></Applications>
+                        </LRoute>
+                        <LRoute exact={true} path="/machines" title="Machines">
+                           <Machines></Machines>
+                        </LRoute>
+                        <Route path="/machines/:id" component={Machine} />
+                        <Route>
+                           No Match
                      </Route>
-                     <Route path="/apps">
-                        <Applications></Applications>
-                     </Route>
-                     <Route path="/machines">
-                        <Machines></Machines>
-                     </Route>
-                     <Route>
-
-                     </Route>
-                  </Switch>
+                     </Switch>
+                  </div>
                </div>
             </div>
          </Router>
