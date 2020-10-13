@@ -3,6 +3,7 @@
         "jsx": "react",
         "target": "es5",
         "module": "commonjs",
+        "lib": [ "es2015", "DOM" ],
         "strict": false,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
