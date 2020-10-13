@@ -54,6 +54,7 @@ export default function Machines(props: any) {
                                     <div className="item">{m.host}</div>
                                     <div className="item ip">{m.ip}</div>
                                     <div className="item datacentre">{m.datacentre}</div>
+                                    <div className="item actions">-</div>
                                 </div>
                             </Link>
                         )

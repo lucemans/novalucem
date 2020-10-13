@@ -44,6 +44,12 @@ export default function Sidebar() {
                 </div>
                 <div className="txt">Applications</div>
             </NavEntry>
+            <NavEntry url="/storage" match="^/storage/?">
+                <div className="icon">
+                <svg id="block" viewBox="0 0 22 24.2"><path d="M11,0L0,4.4v15.4l11,4.4l11-4.4V4.4L11,0z M18.3,5.1L11,8L3.7,5.1L11,2.2L18.3,5.1z M2,6.6l8,3.2v11.8l-8-3.2V6.6z M12,21.6V9.8l8-3.2v11.8L12,21.6z"></path></svg>
+                </div>
+                <div className="txt">Storage</div>
+            </NavEntry>
             <div className="bottom">
                 <Version></Version>
             </div>

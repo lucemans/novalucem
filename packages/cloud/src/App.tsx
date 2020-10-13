@@ -6,6 +6,7 @@ import Machines from './pages/Machines';
 import Applications from './pages/Applications';
 import LRoute from './components/LRoute';
 import Machine from './pages/Machine';
+import Dashboard from './pages/Dashboard';
 
 export default function App(props: any) {
 
@@ -30,8 +31,8 @@ export default function App(props: any) {
                   <div className="content">
                      <Switch>
                         <LRoute exact={true} path="/" title="Control Panel">
-                           
-                     </LRoute>
+                           <Dashboard></Dashboard>
+                        </LRoute>
                         <LRoute exact={true} path="/apps" title="Applications">
                            <Applications></Applications>
                         </LRoute>

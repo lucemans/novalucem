@@ -47,6 +47,11 @@ $primary: #f44b79;
 
         .content_wrap {
             .content {
+                .card {
+                    background: black;
+
+                    border-bottom: 2px solid lighten(black, 10%);
+                }
                 .list {
                     .entry {
                         border-bottom: 2px solid lighten(black, 10%);
