@@ -26,6 +26,14 @@ const machines = [
         ip: '192.168.1.1',
         datacentre: 'VK3-F3',
         status: 'Alive'
+    },
+    {
+        id: '69',
+        name: 'NRC #1173',
+        host: 'V3X-Hello World',
+        ip: '192.168.1.1',
+        datacentre: 'VK3-F3',
+        status: 'Alive'
     }
 ];
 

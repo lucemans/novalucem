@@ -77,13 +77,13 @@ body {
             left: 0;
             box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.07);
             // min-width: 225px;
-            transition: 0.5s;
+            transition: width 0.5s;
             width: 4rem;
             border-right: 2px solid darken(white, 20%);
             overflow: hidden;
             .entry {
                 .txt {
-                    transition: 0.3s;
+                    transition: opacity 0.3s;
                     word-wrap: none;
                     white-space: nowrap;
                     padding-right: 4rem;

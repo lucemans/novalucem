@@ -30,7 +30,7 @@ export default function App(props: any) {
                   <div className="content">
                      <Switch>
                         <LRoute exact={true} path="/" title="Control Panel">
-                           Control Panel
+                           
                      </LRoute>
                         <LRoute exact={true} path="/apps" title="Applications">
                            <Applications></Applications>

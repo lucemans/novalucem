@@ -19,9 +19,10 @@ $primary: #f44b79;
 
     .horizontal {
         background: lighten(black, 10%);
-        
+
         .sidebar {
             background: black;
+            border-right: 2px solid lighten(black, 20%);
             > a {
                 color: white;
             }
@@ -32,7 +33,7 @@ $primary: #f44b79;
                     color: white;
                 }
                 .icon svg {
-                    filter: invert(1)
+                    filter: invert(1);
                 }
                 &:hover {
                     background: lighten(black, 20%);
@@ -44,10 +45,13 @@ $primary: #f44b79;
             }
         }
 
-        .content {
-            .list {
-                .entry {
-                    background: black;
+        .content_wrap {
+            .content {
+                .list {
+                    .entry {
+                        border-bottom: 2px solid lighten(black, 10%);
+                        background: black;
+                    }
                 }
             }
         }
