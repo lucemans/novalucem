@@ -15,6 +15,8 @@ RUN cd /app/packages/auth && yarn
 
 COPY ./packages/auth ./packages/auth
 
+RUN cd ./packages/auth/front && yarn install && yarn build
+
 WORKDIR /app/packages/auth
 
 CMD ["yarn", "start"]

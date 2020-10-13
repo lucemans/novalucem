@@ -3,7 +3,7 @@ import buildUrl from 'build-url';
 import fetch, { Headers } from 'node-fetch';
 import JWT from 'jsonwebtoken';
 import { nanoid } from 'nanoid';
-import {AuthPayload} from '@novalucem/common';
+import { AuthPayload } from '@novalucem/common';
 import chalk from 'chalk';
 import { Logger } from '@lucemans/logger';
 
@@ -22,12 +22,21 @@ app.get('/login', (req: Request, res: Response) => {
         const funnyNum = nanoid();
         authlog.info('/login ' + funnyNum);
         returnURL[funnyNum] = req.query['callback'].toString();
+        res.redirect('/user/?state='+funnyNum);
+        return;
+    }
+    res.status(500);
+    res.send();
+});
+
+app.get('/github-login', async (req: Request, res: Response) => {
+    if (req.query['state']) {
         res.redirect(buildUrl('https://github.com/login/oauth/authorize', {
             queryParams: {
                 client_id: process.env.CLIENT_ID,
                 redirect_uri: 'https://auth.lvk.sh/github-callback',
                 login: '',
-                state: funnyNum,
+                state: req.query['state'].toString(),
                 scope: 'user:email'
             }
         }));
@@ -76,17 +85,19 @@ app.get('/github-callback', async (req: Request, res: Response) => {
         res.redirect(
             buildUrl(returnURL[req.query['state'].toString()], {
                 queryParams: {
-                    auth: JWT.sign({user: userPayload}, process.env.JWT_SECRET, { expiresIn: "1d", issuer: "nl-auth" })
+                    auth: JWT.sign({ user: userPayload }, process.env.JWT_SECRET, { expiresIn: "1d", issuer: "nl-auth" })
                 }
             })
         );
     } else if (req.query['error'] && req.query['state']) {
-        res.send('Welp, it appears you didnt want to be logged in. You can go back to <a href=\"'+returnURL[req.query['state'].toString()]+'\">' + returnURL[req.query['state'].toString()] + '</a>');
+        res.send('Welp, it appears you didnt want to be logged in. You can go back to <a href=\"' + returnURL[req.query['state'].toString()] + '\">' + returnURL[req.query['state'].toString()] + '</a>');
     } else {
         res.sendStatus(500);
     }
 });
 
+app.use('/user/', express.static('front/dist'));
+
 app.listen(port, () => {
-    console.log('AUTH ONLINE');
+    authlog.success('Online');
 });
