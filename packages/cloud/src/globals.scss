@@ -83,7 +83,8 @@ body {
             overflow: hidden;
             .entry {
                 .txt {
-                    transition: opacity 0.3s;
+                    margin-left: 0rem;
+                    transition: opacity 0.3s, margin-left 0.3s;
                     word-wrap: none;
                     white-space: nowrap;
                     padding-right: 4rem;
