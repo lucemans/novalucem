@@ -121,8 +121,10 @@ app.get('/add-account', (req: Request, res: Response) => {
     const username = req.query['username'].toString();
     redis.subscribe("auth_get_account_" + username, (err, a) => {
         pubsubLog.info(chalk.gray('Subbed to ' + chalk.white("auth_get_account_" + username)));
+        let send = false;
         redis.on('message', (channel, message) => {
-            if (channel == "auth_get_account_" + username) {
+            if (channel == "auth_get_account_" + username && !send) {
+                send = true;
                 pubsubLog.info(chalk.gray('Unsubbing from ' + chalk.white("auth_get_account_" + username)));
                 redis.unsubscribe("auth_get_account_" + username);
                 res.send(message);
