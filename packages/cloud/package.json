@@ -9,7 +9,6 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@lucemans/logger": "^1.0.1",
     "@novalucem/common": "^1.0.1",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",

@@ -12,8 +12,10 @@
     "@novalucem/common": "^1.0.1",
     "@types/": "lucemans/streams",
     "@types/express": "^4.17.8",
+    "@types/mongoose": "^5.7.36",
     "@types/redis": "^2.8.27",
     "express": "^4.17.1",
+    "mongoose": "^5.10.9",
     "redis": "^3.0.2"
   }
 }

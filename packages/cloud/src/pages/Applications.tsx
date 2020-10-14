@@ -5,9 +5,7 @@ export default function Applications(props: any) {
 
     return (
         <div className="applications">
-            <Link to="/machines">
-                <div className="back"></div>
-            </Link>
+            <div className="back"></div>
             <div className="title">APPLICATIONS</div>
             <div className="list">
                 <div className="entry">Content</div>

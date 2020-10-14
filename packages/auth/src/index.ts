@@ -8,16 +8,25 @@ import chalk from 'chalk';
 import { Logger } from '@lucemans/logger';
 import { createClient as createRedisClient } from 'redis';
 import { StreamClient } from '@lucemans/streams';
-import { request } from 'http';
+
+const authlog = new Logger(chalk.red('AUTH'));
+const pubsubLog = new Logger(chalk.yellow('PUBSUB'));
+const streamsLog = new Logger(chalk.green('STREAMS'));
 
 const app = express();
 const port = 8080;
 
-const redis = createRedisClient({host:"nl-redis.lvksh.svc.cluster.local"});
-const streams = new StreamClient(redis);
+const redis = createRedisClient({ host: "nl-redis.lvksh.svc.cluster.local" });
+redis.on('ready', () => {
+    pubsubLog.success('PUBSUB Ready');
+})
+const redis_streams = createRedisClient({ host: "nl-redis.lvksh.svc.cluster.local" });
+redis_streams.on('ready', () => {
+    streamsLog.success('Streams Ready');
+});
+const streams = new StreamClient(redis_streams);
 
 const returnURL: { [key: string]: string } = {};
-const authlog = new Logger(chalk.red('AUTH'));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('AUTH OK');
@@ -32,7 +41,7 @@ app.get('/login', (req: Request, res: Response) => {
         const funnyNum = nanoid();
         authlog.info('/login ' + funnyNum);
         returnURL[funnyNum] = req.query['callback'].toString();
-        res.redirect('/user/?state='+funnyNum);
+        res.redirect('/user/?state=' + funnyNum);
         return;
     }
     res.status(500);
@@ -109,9 +118,19 @@ app.get('/github-callback', async (req: Request, res: Response) => {
 app.use('/user/', express.static('front/dist'));
 
 app.get('/add-account', (req: Request, res: Response) => {
-    console.log('WIP');
     const username = req.query['username'].toString();
+    redis.subscribe("auth_get_account_" + username, (err, a) => {
+        pubsubLog.info(chalk.gray('Subbed to ' + chalk.white("auth_get_account_" + username)));
+        redis.on('message', (channel, message) => {
+            if (channel == "auth_get_account_" + username) {
+                pubsubLog.info(chalk.gray('Unsubbing from ' + chalk.white("auth_get_account_" + username)));
+                redis.unsubscribe("auth_get_account_" + username);
+                res.send(message);
+            }
+        });
+    });
     streams.stream('auth_get_account').next(username);
+    streamsLog.info('pushing auth_get_account ' + username);
 });
 
 app.listen(port, () => {
