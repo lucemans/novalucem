@@ -1,7 +1,7 @@
 on:
   push:
-    tags:
-      - .*deploy.*
+    tags: 
+      - .*auth.*
 jobs:
   build:
     name: Build, push, and deploy
