@@ -7,17 +7,24 @@ import { AuthPayload } from '@novalucem/common';
 import chalk from 'chalk';
 import { Logger } from '@lucemans/logger';
 import { createClient as createRedisClient } from 'redis';
+import { StreamClient } from '@lucemans/streams';
+import { request } from 'http';
 
 const app = express();
 const port = 8080;
 
 const redis = createRedisClient({host:"nl-redis.lvksh.svc.cluster.local"});
+const streams = new StreamClient(redis);
 
 const returnURL: { [key: string]: string } = {};
 const authlog = new Logger(chalk.red('AUTH'));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('AUTH OK');
+});
+
+app.get('/healthz', (req: Request, res: Response) => {
+    res.status(200);
 });
 
 app.get('/login', (req: Request, res: Response) => {
@@ -104,8 +111,7 @@ app.use('/user/', express.static('front/dist'));
 app.get('/add-account', (req: Request, res: Response) => {
     console.log('WIP');
     const username = req.query['username'].toString();
-    // redis.publish('auth_check_account', username);
-
+    streams.stream('auth_get_account').next(username);
 });
 
 app.listen(port, () => {

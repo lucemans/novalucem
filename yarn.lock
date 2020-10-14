@@ -1885,17 +1885,17 @@
   dependencies:
     chalk "^4.1.0"
 
-"@lucemans/logger@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@lucemans/logger/-/logger-1.0.4.tgz#55a204975e88f7ac2b889615ce3f64828db195cf"
-  integrity sha512-r63N85ZN+Z9x//H/FUiYIuyz3nKTkD/AmoYdSPDW4ZXqeYZRGa0ZGjwJACgpefhvQMpgnnQMOmN6NWZbWVeJwA==
+"@lucemans/logger@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@lucemans/logger/-/logger-1.0.5.tgz#8b77bc77e0761f2d2252fe690b0e269bb3e8389d"
+  integrity sha512-+AA6zoU5nTJjHwzXWoqSZ9ejo8sMHzmbKxQjWv6SZO3dlD1W6d6zflIAapPHvVeC/T2ZSHQ0eNYDuac5bwcFWA==
   dependencies:
     chalk "^4.1.0"
 
-"@lucemans/streams@1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@lucemans/streams/-/streams-1.0.9.tgz#89538f1f5ec313dd8aef1a28d95aeedf451e991d"
-  integrity sha512-N9Rvy1GzLlKBww5hJ9oOV60ypl7ZzR6DKDoJt4nMFIM7907ZFwnE9I3ZPyKseFVvPZCzLXhyWQDpBsYvlHZZkg==
+"@lucemans/streams@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@lucemans/streams/-/streams-1.1.2.tgz#0331c53700608ee114994b2674a7da24c5034815"
+  integrity sha512-mnq+ZUC5Iq1IpVRjC44F5tcc9mcCsqYX6Nvk3Taarx01EELdlWfseUjnASaQcHcmrtjBnSB2XSd1jSXhxM/plA==
   dependencies:
     "@types/redis" "^2.8.28"
     redis "^3.0.2"
