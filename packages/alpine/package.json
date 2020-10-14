@@ -1,6 +1,6 @@
 {
   "name": "@novalucem/alpine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "@lucemans/logger": "^1.0.1",
-    "@novalucem/common": "^1.0.1"
+    "@novalucem/common": "^1.0.2"
   }
 }

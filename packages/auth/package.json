@@ -1,6 +1,6 @@
 {
   "name": "@novalucem/auth",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,7 @@
     "push": "docker push r.lvk.sh/novalucem/auth"
   },
   "dependencies": {
-    "@novalucem/common": "^1.0.1",
+    "@novalucem/common": "^1.0.2",
     "@types/express": "^4.17.8",
     "@types/node-fetch": "^2.5.7",
     "@types/redis": "^2.8.28",

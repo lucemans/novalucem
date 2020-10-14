@@ -1,6 +1,6 @@
 {
   "name": "@novalucem/deploy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@lucemans/logger": "^1.0.1",
-    "@novalucem/common": "^1.0.1",
+    "@novalucem/common": "^1.0.2",
     "express": "^4.17.1"
   }
 }

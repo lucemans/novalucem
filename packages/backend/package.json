@@ -1,6 +1,6 @@
 {
   "name": "@novalucem/backend",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,7 @@
     "push": "docker push r.lvk.sh/novalucem/backend"
   },
   "dependencies": {
-    "@novalucem/common": "^1.0.1",
+    "@novalucem/common": "^1.0.2",
     "@types/express": "^4.17.8",
     "@types/mongoose": "^5.7.36",
     "@types/redis": "^2.8.27",
