@@ -1,9 +1,9 @@
 on:
   push:
-    branches: 
-      - master
-    tags: 
-      - .*auth.*
+    branches:
+        - master
+    paths:
+      - 'packages/auth/**'
 jobs:
   build:
     name: Build, push, and deploy
