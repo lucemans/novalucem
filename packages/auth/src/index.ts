@@ -6,9 +6,12 @@ import { nanoid } from 'nanoid';
 import { AuthPayload } from '@novalucem/common';
 import chalk from 'chalk';
 import { Logger } from '@lucemans/logger';
+import { createClient as createRedisClient } from 'redis';
 
 const app = express();
 const port = 8080;
+
+const redis = createRedisClient({host:"nl-redis.lvksh.svc.cluster.local"});
 
 const returnURL: { [key: string]: string } = {};
 const authlog = new Logger(chalk.red('AUTH'));
@@ -97,6 +100,13 @@ app.get('/github-callback', async (req: Request, res: Response) => {
 });
 
 app.use('/user/', express.static('front/dist'));
+
+app.get('/add-account', (req: Request, res: Response) => {
+    console.log('WIP');
+    const username = req.query['username'].toString();
+    // redis.publish('auth_check_account', username);
+
+});
 
 app.listen(port, () => {
     authlog.success('Online');

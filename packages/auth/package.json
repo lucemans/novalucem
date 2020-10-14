@@ -9,13 +9,14 @@
     "push": "docker push r.lvk.sh/novalucem/auth"
   },
   "dependencies": {
-    "@lucemans/logger": "^1.0.1",
     "@novalucem/common": "^1.0.1",
     "@types/express": "^4.17.8",
     "@types/node-fetch": "^2.5.7",
+    "@types/redis": "^2.8.28",
     "build-url": "^6.0.1",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
+    "redis": "^3.0.2",
     "webauthn": "^0.2.0"
   }
 }

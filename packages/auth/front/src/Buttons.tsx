@@ -4,6 +4,9 @@ export default function Buttons({webauth}) {
 
     return (
         <div className="card">
+            {/* {username && (<div>Logging you in as <b>{username}</b></div>)}
+            {username && (<p>Is this <a onClick={() => {changeUsername('')}}>not you</a></p>)} */}
+
             <div className="loginMethod">Choose your login method</div>
             <div className="btns">
                 <div className="button github" onClick={() => {

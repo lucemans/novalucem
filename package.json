@@ -21,6 +21,7 @@
     "diff": "lerna diff"
   },
   "dependencies": {
+    "@lucemans/logger": "^1.0.4",
     "@types/jest": "^26.0.14",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.11.2",

@@ -9,8 +9,9 @@
     "push": "docker push r.lvk.sh/novalucem/backend"
   },
   "dependencies": {
-    "@lucemans/logger": "^1.0.1",
+    "@lucemans/streams": "1.0.9",
     "@novalucem/common": "^1.0.1",
+    "@types/": "lucemans/streams",
     "@types/express": "^4.17.8",
     "@types/redis": "^2.8.27",
     "express": "^4.17.1",
