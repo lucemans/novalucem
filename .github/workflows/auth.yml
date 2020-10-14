@@ -1,12 +1,11 @@
 on:
   push:
-    branches:
-        - master
-    paths:
+    branches: [master]
+    paths: 
       - 'packages/auth/**'
 jobs:
   build:
-    name: Build, push, and deploy
+    name: Deploy Auth
     runs-on: ubuntu-latest
 
     steps:
