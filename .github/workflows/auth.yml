@@ -1,6 +1,7 @@
 on:
   push:
-    tags: ['@novalucem/deploy.*']
+    tags:
+      - .*deploy.*
 jobs:
   build:
     name: Build, push, and deploy
