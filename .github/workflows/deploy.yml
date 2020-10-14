@@ -1,27 +1,27 @@
-# on:
-#   push:
-#     branches: [ master ]
+on:
+  push:
+    branches: [ publish-all ]
 
-# jobs:
+jobs:
 
-#   build:
-#     name: Build, push, and deploy
-#     runs-on: ubuntu-latest
+  build:
+    name: Build, push, and deploy
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - uses: actions/checkout@v2
-#       name: Checkout Master
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout Master
 
-#     - name: Prepare Yarn
-#       uses: lucemans/actions-yarn@v2.0.0
+    - name: Prepare Yarn
+      uses: lucemans/actions-yarn@v2.0.0
 
-#     - name: Login Docker
-#       run: echo ${{ secrets.DOCKER_LOGIN }} | docker login -u robot\$github --password-stdin r.lvk.sh
+    - name: Login Docker
+      run: echo ${{ secrets.DOCKER_LOGIN }} | docker login -u robot\$github --password-stdin r.lvk.sh
       
-#     - name: CHMOD
-#       run: sh -c "sudo chmod -R 777 $GITHUB_WORKSPACE" 
+    - name: CHMOD
+      run: sh -c "sudo chmod -R 777 $GITHUB_WORKSPACE" 
 
-#     - name: Install Dependencies
-#       run: yarn install
-#     - name: Build Image
-#       run: yarn buildnpush
+    - name: Install Dependencies
+      run: yarn install
+    - name: Build Image
+      run: yarn buildnpush
