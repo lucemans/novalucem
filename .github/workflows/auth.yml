@@ -2,7 +2,7 @@ on:
   push:
     branches: [master]
     tags: 
-      - .*auth.*
+      - .*@novalucem/auth.*
 jobs:
   build:
     name: Deploy Auth
