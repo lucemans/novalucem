@@ -14,8 +14,14 @@
   },
   "scripts": {
     "build": "lerna run build --stream --since",
-    "push": "lerna run push --stream --since",
-    "buildnpush": "yarn build && yarn push",
+    "build:auth": "lerna run --scope @novalucem/auth build",
+    "build:backend": "lerna run --scope @novalucem/backend build",
+    "build:cloud": "lerna run --scope @novalucem/cloud build",
+    "build:deploy": "lerna run --scope @novalucem/deploy build",
+    "push:auth": "lerna run --scope @novalucem/auth push",
+    "push:backend": "lerna run --scope @novalucem/backend push",
+    "push:cloud": "lerna run --scope @novalucem/cloud push",
+    "push:deploy": "lerna run --scope @novalucem/deploy push",
     "test": "lerna run test --stream --since",
     "new-version": "lerna version --conventional-commits --yes",
     "diff": "lerna diff"
