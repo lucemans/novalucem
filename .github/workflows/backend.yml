@@ -2,7 +2,7 @@ on:
   push:
     branches: [master]
     paths: 
-      - 'packages/deploy/**'
+      - 'packages/backend/**'
 jobs:
   build:
     name: Deploy Backend
@@ -24,6 +24,6 @@ jobs:
     - name: Install Dependencies
       run: yarn install
     - name: Build Image
-      run: yarn build:deploy
+      run: yarn build:backend
     - name: Push Image
-      run: yarn push:deploy
+      run: yarn push:backend

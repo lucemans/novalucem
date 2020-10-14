@@ -18,10 +18,12 @@
     "build:backend": "lerna run --scope @novalucem/backend build",
     "build:cloud": "lerna run --scope @novalucem/cloud build",
     "build:deploy": "lerna run --scope @novalucem/deploy build",
+    "build:alpine": "lerna run --scope @novalucem/alpine build",
     "push:auth": "lerna run --scope @novalucem/auth push",
     "push:backend": "lerna run --scope @novalucem/backend push",
     "push:cloud": "lerna run --scope @novalucem/cloud push",
     "push:deploy": "lerna run --scope @novalucem/deploy push",
+    "push:alpine": "lerna run --scope @novalucem/alpine push",
     "test": "lerna run test --stream --since",
     "new-version": "lerna version --conventional-commits --yes",
     "diff": "lerna diff"

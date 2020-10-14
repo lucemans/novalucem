@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "docker build -t r.lvk.sh/novalucem/alpine . && docker push r.lvk.sh/novalucem/alpine"
+    "build": "docker build -t r.lvk.sh/novalucem/alpine .",
+    "push": "docker push r.lvk.sh/novalucem/alpine"
   },
   "dependencies": {
     "@lucemans/logger": "^1.0.1",
