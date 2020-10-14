@@ -5,7 +5,7 @@ on:
       - 'packages/cloud/**'
 jobs:
   build:
-    name: Deploy Backend
+    name: Deploy Cloud
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,6 @@ jobs:
     - name: Install Dependencies
       run: yarn install
     - name: Build Image
-      run: yarn build:backend
+      run: yarn build:cloud
     - name: Push Image
-      run: yarn push:backend
+      run: yarn push:cloud

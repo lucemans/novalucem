@@ -5,7 +5,7 @@ on:
       - 'packages/alpine/**'
 jobs:
   build:
-    name: Deploy Backend
+    name: Deploy Alpine
     runs-on: ubuntu-latest
 
     steps:

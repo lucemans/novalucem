@@ -5,7 +5,7 @@ on:
       - 'packages/deploy/**'
 jobs:
   build:
-    name: Deploy Backend
+    name: Deploy Deploy-Server
     runs-on: ubuntu-latest
 
     steps:
