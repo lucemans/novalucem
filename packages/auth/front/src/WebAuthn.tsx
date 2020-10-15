@@ -39,19 +39,19 @@ export default function WebAuthn(props: { closeFn, user: User }) {
 
     let [usernameBuff, setUsernameBuff] = React.useState('');
 
-    if (!!!account)
+    // if (!!!account)
         return (
-            <Accounts updateAccount={setAccount}></Accounts>
+            <Accounts updateAccount={setAccount} account={account}></Accounts>
         );
 
-    return (
-        <div className="card">
-            <p>Hello there <b>{account.username}</b></p>
-            <p>Try <a href="#" onClick={(e) => {e.preventDefault(); setAccount(null);}}>another account</a></p>
-            <p>Please follow the instructions on your screen</p>
-            <p>Try another way of <a href={"/user/" + location.search}>authentication</a></p>
-        </div>
-    );
+    // return (
+    //     <div className="card">
+    //         <p>Hello there <b>{account.username}</b></p>
+    //         <p>Try <a href="#" onClick={(e) => {e.preventDefault(); setAccount(null);}}>another account</a></p>
+    //         <p>Please follow the instructions on your screen</p>
+    //         <p>Try another way of <a href={"/user/" + location.search}>authentication</a></p>
+    //     </div>
+    // );
 }
 
 /*
