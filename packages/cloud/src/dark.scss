@@ -33,7 +33,8 @@ $primary: #f44b79;
                     color: white;
                 }
                 .icon svg {
-                    filter: invert(1);
+                    // filter: invert(1);
+                    fill: white;
                 }
                 &:hover {
                     background: lighten(black, 20%);
